@@ -1,0 +1,16 @@
+{
+  "name": "tod_html",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "stylelint": "^16.22.0",
+    "stylelint-config-recess-order": "^7.1.0",
+    "stylelint-config-recommended-scss": "^15.0.1"
+  }
+}
