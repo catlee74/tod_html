@@ -1,29 +1,76 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css');
+
+* {
+  font-family: 'Pretendard Variable', Pretendard, -apple-system,
+    BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI',
+    'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+}
+
 body {
   height: 100dvh;
 }
-
+a {
+  text-decoration: none;
+}
 .nav {
-  min-height: 3.5rem;
-  background-color: aqua;
-}
+  //alt z = rem to px
 
-.main {
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  column-gap: 1.5rem;
-  max-width: 80rem;
-  height: calc(100% - 3.5rem);
-  padding-inline: 3.75rem;
-  margin-inline: auto;
-  background-color: red;
+  min-height: 56px;
+  background-color: rgb(68, 80, 80);
+  color: #d2d2d2;
+  // font-size: 16px;
+  padding-inline: 30px;
+  padding-block: 19px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
 
-  &__left {
-    grid-column: 1 / span 4;
-    background-color: blue;
+  &__logo {
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.5s ease;
   }
-
+  &__logo:hover {
+    transform: scale(1.1);
+  }
   &__right {
-    grid-column: 5 / -1;
-    background-color: green;
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+  }
+  &__right a {
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+    // text-decoration: none;
+  }
+  &__right a:hover {
+    color: red;
+    border-bottom: 3px solid red;
   }
 }
+
+// .main {
+//   display: grid;
+//   grid-template-columns: repeat(12, minmax(0, 1fr));
+//   column-gap: 24px;
+//   max-width: 1280px;
+//   height: calc(100% - 56px);
+//   padding-inline: 60px;
+//   margin-inline: auto;
+//   background-color: red;
+
+//   &__left {
+//     grid-column: 1 / span 4;
+//     background-color: blue;
+//   }
+
+//   &__right {
+//     grid-column: 5 / -1;
+//     background-color: green;
+//   }
+// }
