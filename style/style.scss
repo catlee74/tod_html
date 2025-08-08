@@ -17,17 +17,20 @@ a {
   //alt z = rem to px
 
   min-height: 56px;
-  background-color: rgb(68, 80, 80);
+  background-color: #1b1b1b;
   color: #d2d2d2;
   // font-size: 16px;
-  padding-inline: 30px;
-  padding-block: 19px;
+  padding-inline: 60px;
+  // padding-inline: 30px;
+  padding-block: 50px;
+  // padding-block: 19px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 100;
 
   &__logo {
+    font-size: 1.25rem;
     font-weight: 700;
     cursor: pointer;
     transition: 0.5s ease;
@@ -37,20 +40,41 @@ a {
   }
   &__right {
     display: flex;
-    gap: 1rem;
+    gap: 1.625rem;
+    // gap: 1rem;
+
+    font-size: 1rem;
+    font-weight: 500;
     list-style: none;
     cursor: pointer;
     transition: 0.3s ease;
     border-bottom: 3px solid transparent;
   }
   &__right a {
+    padding: 0.75rem;
     transition: 0.3s ease;
     border-bottom: 3px solid transparent;
     // text-decoration: none;
   }
   &__right a:hover {
-    color: red;
-    border-bottom: 3px solid red;
+    // color: red;
+    padding-inline: 0.75rem;
+    padding-block: 0.5rem;
+    color: #1b1b1b;
+    background-color: #d2d2d2;
+    font-weight: 800;
+    // border-bottom: 3px solid #d2d2d2;
+  }
+}
+.main {
+  padding-block: 7.5rem;
+  padding-inline: 1.25rem;
+  background-color: #1b1b1b;
+
+  &__text {
+    color: #d2d2d2;
+    font-size: 1.5625rem;
+    font-weight: 700;
   }
 }
 

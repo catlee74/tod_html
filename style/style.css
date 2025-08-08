@@ -13,16 +13,17 @@ a {
 
 .nav {
   min-height: 56px;
-  background-color: rgb(68, 80, 80);
+  background-color: #1b1b1b;
   color: #d2d2d2;
-  padding-inline: 30px;
-  padding-block: 19px;
+  padding-inline: 60px;
+  padding-block: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 100;
 }
 .nav__logo {
+  font-size: 1.25rem;
   font-weight: 700;
   cursor: pointer;
   transition: 0.5s ease;
@@ -32,17 +33,34 @@ a {
 }
 .nav__right {
   display: flex;
-  gap: 1rem;
+  gap: 1.625rem;
+  font-size: 1rem;
+  font-weight: 500;
   list-style: none;
   cursor: pointer;
   transition: 0.3s ease;
   border-bottom: 3px solid transparent;
 }
 .nav__right a {
+  padding: 0.75rem;
   transition: 0.3s ease;
   border-bottom: 3px solid transparent;
 }
 .nav__right a:hover {
-  color: red;
-  border-bottom: 3px solid red;
+  padding-inline: 0.75rem;
+  padding-block: 0.5rem;
+  color: #1b1b1b;
+  background-color: #d2d2d2;
+  font-weight: 800;
+}
+
+.main {
+  padding-block: 7.5rem;
+  padding-inline: 1.25rem;
+  background-color: #1b1b1b;
+}
+.main__text {
+  color: #d2d2d2;
+  font-size: 1.5625rem;
+  font-weight: 700;
 }
