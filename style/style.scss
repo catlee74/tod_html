@@ -67,14 +67,33 @@ a {
   }
 }
 .main {
-  padding-block: 7.5rem;
-  padding-inline: 1.25rem;
-  background-color: #1b1b1b;
+  // padding-block: 4.5rem;
+  // padding-inline: 1.25rem;
+  // position: relative;
 
+  background-color: #1b1b1b;
+  width: 18.75rem;
+  height: 18.75rem;
+  margin-inline: auto;
   &__text {
-    color: #d2d2d2;
-    font-size: 1.5625rem;
-    font-weight: 700;
+    text-align: center;
+
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    &-question {
+      color: #d2d2d2;
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    &-animaiton {
+      color: #d2d2d2;
+      font-size: 1.25rem;
+      font-weight: 700;
+      padding-top: 2.625rem;
+    }
   }
 }
 

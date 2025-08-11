@@ -55,12 +55,23 @@ a {
 }
 
 .main {
-  padding-block: 7.5rem;
-  padding-inline: 1.25rem;
   background-color: #1b1b1b;
+  width: 18.75rem;
+  height: 18.75rem;
+  margin-inline: auto;
 }
 .main__text {
+  text-align: center;
+}
+.main__text-question {
   color: #d2d2d2;
-  font-size: 1.5625rem;
+  font-size: 1.25rem;
   font-weight: 700;
+  letter-spacing: 0.05em;
+}
+.main__text-animaiton {
+  color: #d2d2d2;
+  font-size: 1.25rem;
+  font-weight: 700;
+  padding-top: 2.625rem;
 }
