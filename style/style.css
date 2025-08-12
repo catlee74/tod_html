@@ -5,6 +5,7 @@
 
 body {
   height: 100dvh;
+  background-color: #1b1b1b;
 }
 
 a {
@@ -55,7 +56,12 @@ a {
 }
 
 .main {
-  background-color: #1b1b1b;
+  background: transparent;
+  border: 1px solid #262626;
+  border-radius: 0.625rem;
+  -webkit-backdrop-filter: blur(1.25rem);
+          backdrop-filter: blur(1.25rem);
+  box-shadow: 0 0 20px #121212;
   width: 18.75rem;
   height: 18.75rem;
   margin-inline: auto;
@@ -63,9 +69,11 @@ a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center;
 }
 .main__text {
-  display: flex;
+  text-align: center;
 }
 .main__text-question {
   color: #d2d2d2;
@@ -77,5 +85,5 @@ a {
   color: #d2d2d2;
   font-size: 1.25rem;
   font-weight: 700;
-  padding-top: 2.625rem;
+  padding-top: 2rem;
 }
