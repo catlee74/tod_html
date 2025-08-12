@@ -1,0 +1,14 @@
+.title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  background-color: aqua;
+  padding-block: 2.5rem;
+}
+
+.container {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  background-color: blue;
+  margin-inline: auto;
+}
