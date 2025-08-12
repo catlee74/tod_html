@@ -59,9 +59,10 @@ a {
   width: 18.75rem;
   height: 18.75rem;
   margin-inline: auto;
-}
-.main__text {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .main__text-question {
   color: #d2d2d2;
