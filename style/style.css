@@ -12,7 +12,7 @@ a {
   background-color: #1b1b1b;
   color: #d2d2d2;
   padding-inline: 60px;
-  padding-block: 50px;
+  padding-block: 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -26,6 +26,7 @@ a {
 }
 .nav__logo:hover {
   transform: scale(1.1);
+  text-shadow: 0rem 0rem 1rem rgba(255, 255, 255, 0.5);
 }
 .nav__right {
   display: flex;
@@ -35,7 +36,6 @@ a {
   list-style: none;
   cursor: pointer;
   transition: 0.3s ease;
-  border-bottom: 3px solid transparent;
 }
 .nav__right a {
   padding: 0.75rem;
@@ -45,9 +45,11 @@ a {
 .nav__right a:hover {
   padding-inline: 0.75rem;
   padding-block: 0.5rem;
+  border-radius: 62.4375rem;
   color: #1b1b1b;
   background-color: #d2d2d2;
   font-weight: 800;
+  box-shadow: 0rem 0rem 1rem rgba(255, 255, 255, 0.5);
 }
 
 .main {
