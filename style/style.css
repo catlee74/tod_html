@@ -11,7 +11,7 @@ a {
   min-height: 56px;
   background-color: #1b1b1b;
   color: #d2d2d2;
-  padding-inline: 60px;
+  padding-inline: 3.75rem;
   padding-block: 2rem;
   display: flex;
   justify-content: space-between;

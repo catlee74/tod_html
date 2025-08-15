@@ -1,25 +1,69 @@
-.card {
+.card-off {
   height: 31.25rem;
   font-size: 1.125rem;
-  font-weight: 400;
   line-height: 150%;
-  margin-top: 2rem;
   background-color: #1f1f1f;
   border: 2px solid #606060;
   border-radius: 0.75rem;
   color: #d2d2d2;
   padding-inline: 28px;
   padding-block: 28px;
+  display: grid;
+  transition: 0.3s ease;
 }
-.card__title {
+.card-off__title {
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 600;
+  border-top: 1px solid #606060;
+  padding-top: 0.9375rem;
 }
-.card__text {
+.card-off__text {
   font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 700;
+  align-self: center;
+  justify-self: center;
+  text-align: center;
 }
-.card__number {
+.card-off__number {
   font-size: 1rem;
+  font-weight: 600;
+  align-self: end;
+}
+
+.card-on {
+  display: none;
+}
+
+.card-off:hover {
+  height: 31.25rem;
+  font-size: 1.125rem;
+  line-height: 150%;
+  background-color: #e9e9e9;
+  border: 2px solid #606060;
+  border-radius: 0.75rem;
+  color: #1f1f1f;
+  padding-inline: 28px;
+  padding-block: 28px;
+  display: grid;
+  box-shadow: 0rem 0rem 2rem rgba(255, 255, 255, 0.3);
+}
+.card-off:hover__title {
+  font-size: 1rem;
+  font-weight: 600;
+  border-top: 1px solid #adadad;
+  padding-top: 0.9375rem;
+}
+.card-off:hover__text {
+  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 700;
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+}
+.card-off:hover__number {
+  font-size: 1rem;
+  font-weight: 600;
+  align-self: end;
 }
