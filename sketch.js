@@ -1,40 +1,47 @@
-let gradientText = ' .:-=+*#%@';
-let canvasSize = [640, 480];
-let scale = 0.1;
-let captureSize = [canvasSize[0] * scale, canvasSize[1] * scale];
-let tileWidth = canvasSize[0] / captureSize[0];
+let img;
+let asciiText = ' .:-=+*#%@';
 
-let capture;
+function preload() {
+  img = loadImage('img/pexels-markus-winkler-1430818-32750830.jpg');
+}
 
 function setup() {
-  createCanvas(canvasSize[0], canvasSize[1]);
-  capture = createCapture(VIDEO, { flipped: true });
-  //화면 반전 flipped:true
-  capture.size(captureSize[0], captureSize[1]);
-  capture.hide();
+  createCanvas(windowWidth, windowHeight - 120);
+  //-120은 임시로 설정해놓은 사이즈임
+  background('#1b1b1b');
+  textAlign(LEFT, TOP);
+  noLoop();
 }
 
 function draw() {
-  background(0);
-  fill(255);
-  textSize(10);
-  textAlign(CENTER, CENTER);
-  // text(gradientText.charAt(3), 20, 20);
-  capture.loadPixels();
-  for (let idx = 0; idx < capture.pixels.length / 4; idx++) {
-    let r = capture.pixels[4 * idx + 0];
-    let g = capture.pixels[4 * idx + 1];
-    let b = capture.pixels[4 * idx + 2];
-    let a = capture.pixels[4 * idx + 3];
-    let bright = brightness([r, g, b]);
-    let gradientIdx = map(bright, 0, 255, 0, gradientText.length - 1);
-    gradientIdx = floor(gradientIdx);
-    let asciiText = gradientText.charAt(gradientIdx);
-    let column = idx % captureSize[0];
-    let row = floor(idx / captureSize[0]);
-    let x = column * tileWidth + tileWidth * 0.5;
-    let y = row * tileWidth + tileWidth * 0.5;
+  background('#1b1b1b');
+  let charSize = 12;
+  //아스키 문자 하나의 가로 세로 크기
+  //숫자가 작을 수록 촘촘, 커질 수록 픽셀 느낌남
 
-    text(asciiText, x, y);
+  textSize(charSize);
+
+  let cols = floor(width / charSize);
+  let rows = floor(height / charSize);
+  //화면에 들어갈 문자 개수
+
+  img.resize(cols, rows);
+  img.loadPixels();
+
+  for (let y = 0; y < img.height; y++) {
+    for (let x = 0; x < img.width; x++) {
+      let index = (x + y * img.width) * 4;
+      let r = img.pixels[index + 0];
+      let g = img.pixels[index + 1];
+      let b = img.pixels[index + 2];
+
+      let brightness = (r + g + b) / 3;
+      let charIndex = floor(map(brightness, 0, 255, asciiText.length - 1, 0));
+      let c = asciiText.charAt(charIndex);
+
+      fill(150);
+      textSize(7);
+      text(c, x * charSize, y * charSize);
+    }
   }
 }

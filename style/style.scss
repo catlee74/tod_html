@@ -87,12 +87,12 @@ img {
   // padding-inline: 1.25rem;
   // position: relative;
 
-  // background-color: #1b1b1b;
-  background: transparent;
-  border: 1px solid #262626;
-  border-radius: 0.625rem;
+  background-color: #1b1b1b;
+  // background: transparent;
+  // border: 1px solid #262626;
+  // border-radius: 0.625rem;
   backdrop-filter: blur(1.25rem);
-  box-shadow: 0 0 20px #121212;
+  // box-shadow: 0 0 20px #121212;
   width: 18.75rem;
   height: 18.75rem;
   margin-inline: auto;
@@ -114,16 +114,19 @@ img {
     // justify-self: center;
     &-question {
       color: #d2d2d2;
-      font-size: 17.6px;
+      font-size: 18px;
       // font-size: 1.25rem;
       font-weight: 700;
       letter-spacing: 0.05em;
     }
 
     &-animaiton {
+      display: flex;
+      justify-content: center;
       color: #d2d2d2;
       font-size: 1.1rem;
       font-weight: 700;
+
       padding-top: 1rem;
     }
   }
