@@ -1,0 +1,90 @@
+@charset "UTF-8";
+body {
+  height: 100dvh;
+  background-color: #1b1b1b;
+}
+
+a {
+  text-decoration: none;
+}
+
+.nav {
+  min-height: 56px;
+  background-color: #1b1b1b;
+  color: #d2d2d2;
+  padding-inline: 3.75rem;
+  padding-block: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+.nav__logo {
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+.nav__logo:hover {
+  transform: scale(1.1);
+  text-shadow: 0rem 0rem 1rem rgba(255, 255, 255, 0.5);
+}
+.nav__right {
+  display: flex;
+  gap: 1.625rem;
+  font-size: 1rem;
+  font-weight: 500;
+  list-style: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.nav__right a {
+  padding: 0.75rem;
+  transition: 0.3s ease;
+  border-bottom: 3px solid transparent;
+}
+.nav__right a:hover {
+  padding-inline: 0.75rem;
+  padding-block: 0.5rem;
+  border-radius: 62.4375rem;
+  color: #1b1b1b;
+  background-color: #d2d2d2;
+  font-weight: 800;
+  box-shadow: 0rem 0rem 1rem rgba(255, 255, 255, 0.5);
+}
+
+.container {
+  padding-inline: 7.5rem;
+  color: #d2d2d2;
+  width: 50em;
+  position: absolute;
+  top: 35%; /* 화면 세로 중앙 */
+  right: 5%; /* 화면 오른쪽 끝 */
+  transform: translateY(-50%);
+  padding-top: 12rem;
+}
+
+.text {
+  justify-content: flex-end; /* 가로 → 오른쪽 */
+  align-items: center;
+}
+
+.poem {
+  padding-bottom: 2rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 190%;
+}
+
+.info {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 180%;
+  padding-bottom: 6.25rem;
+}
+
+.name {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 150%;
+}
