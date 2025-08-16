@@ -7,11 +7,6 @@ a {
   text-decoration: none;
 }
 
-img {
-  margin-inline: auto;
-  display: block;
-}
-
 .nav {
   min-height: 56px;
   background-color: #1b1b1b;
@@ -57,35 +52,7 @@ img {
   box-shadow: 0rem 0rem 1rem rgba(255, 255, 255, 0.5);
 }
 
-.main {
-  background: transparent;
-  border: 1px solid #262626;
-  border-radius: 0.625rem;
-  -webkit-backdrop-filter: blur(1.25rem);
-          backdrop-filter: blur(1.25rem);
-  box-shadow: 0 0 20px #121212;
-  width: 18.75rem;
-  height: 18.75rem;
+img {
   margin-inline: auto;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: grid;
-  place-items: center;
-}
-.main__text {
-  text-align: center;
-}
-.main__text-question {
-  color: #d2d2d2;
-  font-size: 17.6px;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-}
-.main__text-animaiton {
-  color: #d2d2d2;
-  font-size: 1.1rem;
-  font-weight: 700;
-  padding-top: 1rem;
+  display: block;
 }
