@@ -72,21 +72,29 @@ a {
 }
 
 .container {
-  padding-inline: 7.5rem;
+  // padding-inline: 7.5rem;
+
   color: #d2d2d2;
-  width: 50em;
-  position: absolute;
-  top: 35%; /* 화면 세로 중앙 */
-  right: 5%; /* 화면 오른쪽 끝 */
-  transform: translateY(-50%);
+  // width: 50em;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  // position: absolute;
+  // top: 35%;
+  // right: 5%;
+  // transform: translateY(-50%);
   // margin-left: auto;
   // height: 500px;
-  padding-top: 12rem;
+  // padding-top: 12rem;
 }
 .text {
   // display: flex;
-  justify-content: flex-end; /* 가로 → 오른쪽 */
-  align-items: center;
+  // justify-content: flex-end;
+  // align-items: center;
+  background-color: #1b1b1b;
+  padding-inline: 4rem;
+  padding-block: 5rem;
 }
 .poem {
   padding-bottom: 2rem;
