@@ -1,47 +1,55 @@
-let img;
-let asciiText = ' .:-=+*#%@';
+let asciiChar =
+  '$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/|()1{}[]?-_+~<>i!lI;:,^`';
+let video;
 
-function preload() {
-  img = loadImage('img/pexels-markus-winkler-1430818-32750830.jpg');
-}
+//3:2 비율임
+//고정사이즈인데 아이맥에서도 ㄱㅊ을지?
+let vidw = 96;
+let vidh = 54;
+
+let w;
+let h;
+let charSize = 10; //글자 사이즈
 
 function setup() {
   createCanvas(windowWidth, windowHeight - 120);
-  //-120은 임시로 설정해놓은 사이즈임
-  background('#1b1b1b');
-  textAlign(LEFT, TOP);
-  noLoop();
+  video = createCapture(VIDEO, { flipped: true });
+  video.size(vidw, vidh);
+  video.hide();
+
+  w = width / vidw;
+  h = height / vidh; //세로 간격
+  // h = 10; //세로 간격
+
+  textAlign(CENTER, CENTER);
+  fill(255);
 }
 
 function draw() {
   background('#1b1b1b');
-  let charSize = 12;
-  //아스키 문자 하나의 가로 세로 크기
-  //숫자가 작을 수록 촘촘, 커질 수록 픽셀 느낌남
-
   textSize(charSize);
+  fill('#d2d2d2');
 
-  let cols = floor(width / charSize);
-  let rows = floor(height / charSize);
-  //화면에 들어갈 문자 개수
+  video.loadPixels();
 
-  img.resize(cols, rows);
-  img.loadPixels();
+  for (let i = 0; i < video.width; i++) {
+    for (let j = 0; j < video.height; j++) {
+      let pixelIndex = (i + j * video.width) * 4;
+      let r = video.pixels[pixelIndex];
+      let g = video.pixels[pixelIndex + 1];
+      let b = video.pixels[pixelIndex + 2];
 
-  for (let y = 0; y < img.height; y++) {
-    for (let x = 0; x < img.width; x++) {
-      let index = (x + y * img.width) * 4;
-      let r = img.pixels[index + 0];
-      let g = img.pixels[index + 1];
-      let b = img.pixels[index + 2];
+      let bright = (r + g + b) / 3;
 
-      let brightness = (r + g + b) / 3;
-      let charIndex = floor(map(brightness, 0, 255, asciiText.length - 1, 0));
-      let c = asciiText.charAt(charIndex);
+      //대비를 강하게 줘서 아스키아트가 잘 보이게 만들어주는 코드
+      //곱하기 옆에 있는 숫자가 높아질 수록 대비가 강해진다
+      bright = constrain((bright - 128) * 3 + 128, 0, 255);
 
-      fill(150);
-      textSize(7);
-      text(c, x * charSize, y * charSize);
+      let tIndex = floor(map(bright, 0, 255, 0, asciiChar.length - 1));
+      let x = i * w + w / 2;
+      let y = j * h + h / 2;
+      let t = asciiChar.charAt(tIndex);
+      text(t, x, y);
     }
   }
 }
