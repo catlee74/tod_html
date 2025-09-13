@@ -61,8 +61,8 @@ img {
   background-color: #1b1b1b;
   -webkit-backdrop-filter: blur(1.25rem);
           backdrop-filter: blur(1.25rem);
-  width: 18.75rem;
-  height: 18.75rem;
+  width: 19em;
+  height: 19rem;
   margin-inline: auto;
   position: absolute;
   top: 50%;

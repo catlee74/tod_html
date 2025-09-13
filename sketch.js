@@ -4,8 +4,17 @@ let video;
 
 //3:2 비율임
 //고정사이즈인데 아이맥에서도 ㄱㅊ을지?
-let vidw = 96;
-let vidh = 54;
+// let vidw = 96;
+// let vidh = 54;
+
+// let vidw = 120;
+// let vidh = 80;
+
+//16:9비율
+let vidw = 128;
+let vidh = 72;
+// let vidw = 160;
+// let vidh = 90;
 
 let w;
 let h;
