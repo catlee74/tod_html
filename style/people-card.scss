@@ -1,4 +1,4 @@
-.card-off {
+.card {
   height: 31.25rem;
   font-size: 1.125rem;
   // font-weight: 400;
@@ -12,7 +12,15 @@
   padding-inline: 28px;
   padding-block: 28px;
   display: grid;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
   transition: 0.3s ease;
+
+  .default {
+    display: inline;
+  }
+  .hover {
+    display: none;
+  }
 
   &__title {
     font-size: 1rem;
@@ -35,11 +43,7 @@
   }
 }
 
-.card-on {
-  display: none;
-}
-
-.card-off:hover {
+.card:hover {
   height: 31.25rem;
   font-size: 1.125rem;
   line-height: 150%;
@@ -51,24 +55,12 @@
   padding-block: 28px;
   display: grid;
   box-shadow: 0rem 0rem 2rem rgba(255, 255, 255, 0.3);
+  transform: translateY(-10px);
 
-  &__title {
-    font-size: 1rem;
-    font-weight: 600;
-    border-top: 1px solid #adadad;
-    padding-top: 0.9375rem;
+  .default {
+    display: none;
   }
-  &__text {
-    font-size: 1.5rem;
-    font-size: 1.25rem;
-    font-weight: 700;
-    align-self: center;
-    justify-self: center;
-    text-align: center;
-  }
-  &__number {
-    font-size: 1rem;
-    font-weight: 600;
-    align-self: end;
+  .hover {
+    display: inline;
   }
 }
