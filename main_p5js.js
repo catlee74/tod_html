@@ -20,7 +20,19 @@ let w;
 let h;
 let charSize = 10; //글자 사이즈
 
+//교수님 코드__네비 외 화면계산
+let parentDom;
+let p5Renderer;
+
 function setup() {
+  // // 교수님코드__네비 외에 화면크기 계산
+  // //나중에 꼭 연구해볼 것!
+  // parentDom = document.querySelector('.canvas-container');
+  // const { width: parentWidth, height: parentHeight } =
+  //   parentDom.getBoundingClientRect();
+  // p5Renderer = createCanvas(parentWidth, parentHeight);
+  // p5Renderer.parent(parentDom);
+
   createCanvas(windowWidth, windowHeight - 120);
   video = createCapture(VIDEO, { flipped: true });
   video.size(vidw, vidh);
@@ -51,8 +63,10 @@ function draw() {
       let bright = (r + g + b) / 3;
 
       //대비를 강하게 줘서 아스키아트가 잘 보이게 만들어주는 코드
-      //곱하기 옆에 있는 숫자가 높아질 수록 대비가 강해진다
-      bright = constrain((bright - 128) * 3 + 128, 0, 255);
+      //2.2 이 숫자 건드리면 대비 강해짐
+      let normalBright = bright / 255;
+      let powedBright = pow(normalBright, 1 / 2.2);
+      bright = 255 * powedBright;
 
       let tIndex = floor(map(bright, 0, 255, 0, asciiChar.length - 1));
       let x = i * w + w / 2;
