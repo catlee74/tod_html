@@ -37,7 +37,7 @@ function setup() {
 function draw() {
   background('#1b1b1b');
   textSize(charSize);
-  fill('#d2d2d2');
+  // fill('#d2d2d2');
 
   video.loadPixels();
 
@@ -59,6 +59,15 @@ function draw() {
       let y = j * h + h / 2;
       let t = asciiChar.charAt(tIndex);
       text(t, x, y);
+
+      //gpt
+      let topCol = color('#1b1b1b');
+      let bottomCol = color('#d2d2d2');
+      let amt = j / video.height; // 0(위) → 1(아래)
+      let gradCol = lerpColor(topCol, bottomCol, amt);
+      fill(gradCol);
+
+      text(asciiChar.charAt(tIndex), x, y);
     }
   }
 }
