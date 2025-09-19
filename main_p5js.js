@@ -72,12 +72,15 @@ function draw() {
       let x = i * w + w / 2;
       let y = j * h + h / 2;
       let t = asciiChar.charAt(tIndex);
-      text(t, x, y);
+
+      //중복이 되어서 그리기 때문에 그라데이션 문제가 생긴 것
+      // text(t, x, y);
 
       //gpt
+
       let topCol = color('#1b1b1b');
       let bottomCol = color('#d2d2d2');
-      let amt = j / video.height; // 0(위) → 1(아래)
+      let amt = j / (video.height - 1); // 0(위) → 1(아래)
       let gradCol = lerpColor(topCol, bottomCol, amt);
       fill(gradCol);
 
