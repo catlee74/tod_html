@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const gallery = document.querySelector('.gallery');
 
   const numberOfItems = 50;
-  const radius = 1100; //원 크기
+  const radius = 1300; //원 크기
+  // const radius = 1100; //원 크기
 
   const centerX = window.innerWidth / 2; //원의 중심 x좌표
   const centerY = window.innerHeight / 2;
