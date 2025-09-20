@@ -3,8 +3,8 @@ import { interiors } from './novel_data.js';
 document.addEventListener('DOMContentLoaded', function () {
   const cursor = document.querySelector('.cursor');
   const gallery = document.querySelector('.gallery');
-  const numberOfItems = 50;
 
+  const numberOfItems = 50;
   const radius = 1100; //원 크기
 
   const centerX = window.innerWidth / 2; //원의 중심 x좌표
