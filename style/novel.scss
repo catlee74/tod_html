@@ -129,50 +129,51 @@ img {
 
 // 키워드 문장
 .text {
+  // display: flex;
+  // flex-direction: column; /* 위아래 배치 */
+  // align-items: flex-start; /* 중앙 정렬 */
+  // justify-content: center;
+
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0.9);
   color: #d2d2d2;
-  font-size: 2rem;
-  font-weight: 600;
-  text-align: center;
+  // font-size: 2rem;
+  // font-weight: 600;
+  // text-align: center;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.35s ease, transform 0.35s ease;
+  // transition: opacity 0.5s ease, transform 0.5s ease;
+
   z-index: 10;
-  max-width: 80%;
+  max-width: 100%;
   line-height: 1.5;
-  padding: 1rem 1.25rem;
-  background: rgba(27, 27, 27, 0.7);
-  border-radius: 12px;
-  backdrop-filter: blur(4px);
-}
-.text.visible {
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
+  // padding: 1rem 1.25rem;
+  // background: rgba(27, 27, 27, 0.7);
+  // border-radius: 12px;
+  // backdrop-filter: blur(4px);
 }
 
-.text.hidden-scale {
-  transform: translate(-50%, -50%) scale(0.98);
+.sentence {
+  text-align: left;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  // padding-left: 20px;
 }
 
-// //gpt
-// .text-box {
-//   position: fixed;
-//   bottom: height/2;
-//   right: width/2;
-//   width: 300px;
-//   padding: 1rem;
-//   background: rgba(0, 0, 0, 0.7);
-//   color: #fff;
-//   font-size: 14px;
-//   line-height: 1.5;
-//   border-radius: 8px;
-//   opacity: 0; // 기본은 숨김
-//   pointer-events: none; // 클릭 방지
-//   transition: opacity 0.3s ease;
-// }
-// .text-box.active {
-//   opacity: 1; // 활성화 시 나타남
-// }
+.description {
+  text-align: left;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.65;
+  color: #c8c8c8;
+  opacity: 0;
+  // transform: translateY(10px);
+  // transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.highlight {
+  color: red;
+  font-weight: 800;
+}
