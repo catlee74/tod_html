@@ -127,19 +127,17 @@ img {
   font-size: 1rem;
 }
 
-// 키워드 문장
 .text {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  //이거 했는데 왜 왼쪽 정렬 예쁘게 안됨
   align-items: start;
   width: 50em;
   height: 40rem;
   padding: 30px;
   margin-inline: auto;
-  // position: absolute;
-  // top: 50%;
-  // left: 50%;
+
   position: fixed;
   top: 50%;
   left: 50%;
