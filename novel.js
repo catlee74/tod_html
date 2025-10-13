@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
           gsap.set([sentenceBox, descriptionBox, textBox], {
             y: 0,
-            scale: 0.95,
+            scale: 1,
           });
         },
       });
