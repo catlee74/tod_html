@@ -1,7 +1,7 @@
 import { interiors } from './novel_data.js';
 
 document.addEventListener('DOMContentLoaded', function () {
-  const cursor = document.querySelector('.cursor');
+  // const cursor = document.querySelector('.cursor');
   const gallery = document.querySelector('.gallery');
 
   const textBox = document.querySelector('.text');
@@ -58,26 +58,29 @@ document.addEventListener('DOMContentLoaded', function () {
       const description = data.description || '';
 
       if (sentence) {
-        // 텍스트 교체
         sentenceBox.innerHTML = sentence;
         descriptionBox.innerHTML = description;
 
-        gsap.killTweensOf([textBox, sentenceBox, descriptionBox]); // 이전 애니메이션 중지
+        gsap.killTweensOf([textBox, sentenceBox, descriptionBox]);
 
         gsap.fromTo(
           textBox,
           { opacity: 0, scale: 0.9 },
-          { opacity: 1, scale: 1, duration: 0.5, ease: 'power3.out' }
+          {
+            opacity: 1,
+            scale: 1,
+            duration: 0.5,
+            ease: 'power3.out',
+            transformOrigin: 'center center',
+          }
         );
 
-        // sentence
         gsap.fromTo(
           sentenceBox,
           { opacity: 0, y: 5, scale: 0.9 },
           { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: 'power3.out' }
         );
 
-        // description은 sentence 밑에서 살짝 올라오도록 지연(stagger)
         gsap.fromTo(
           descriptionBox,
           { opacity: 0, y: 5 },
@@ -92,8 +95,9 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
 
-    // 마우스 아웃: 이미지 제거 + 중앙 문장 숨김
     item.addEventListener('mouseout', function () {
+      //네모 나타나는거 코드
+
       // const imgs = cursor.getElementsByTagName('img');
       // if (imgs.length) {
       //   const lastImg = imgs[imgs.length - 1];
@@ -117,7 +121,6 @@ document.addEventListener('DOMContentLoaded', function () {
       //     ease: 'power3.out',
       //     delay: 0.25,
       //     onComplete: () => {
-      //       // 마지막 이미지 제거 (선택)
       //       setTimeout(() => {
       //         if (lastImg.parentElement) lastImg.remove();
       //       }, 1000);
@@ -125,18 +128,16 @@ document.addEventListener('DOMContentLoaded', function () {
       //   });
       // }
 
-      // 애니메이션 중단 방지
       gsap.killTweensOf([textBox, sentenceBox, descriptionBox]);
 
-      // description 먼저 사라지게 (약간 빠르게)
       gsap.to(descriptionBox, {
         opacity: 0,
         y: -5,
         duration: 0.35,
         ease: 'power2.inOut',
+        padding: 0,
       });
 
-      // sentence와 전체 박스는 조금 더 천천히 사라짐
       gsap.to(sentenceBox, {
         opacity: 0,
         y: -5,
@@ -151,62 +152,50 @@ document.addEventListener('DOMContentLoaded', function () {
         duration: 0.5,
         delay: 0.08,
         ease: 'power2.inOut',
+        transformOrigin: 'center center',
+
         onComplete: () => {
-          // 완전히 숨겨졌을 때 텍스트 제거(중복표시 방지)
           sentenceBox.textContent = '';
           descriptionBox.textContent = '';
-          // 초기 위치 리셋
+
           gsap.set([sentenceBox, descriptionBox, textBox], {
             y: 0,
             scale: 0.95,
           });
         },
       });
-
-      // // 페이드아웃 + 살짝 축소 + 위로 약간 움직임
-      // gsap.to(centerText, {
-      //   opacity: 0, // 서서히 투명해짐
-      //   scale: 0.9, // 살짝 작아지며 멀어지는 느낌
-      //   y: 5, // 아래로 떨어짐
-      //   duration: 0.5, // 0.5초 동안 서서히
-      //   ease: 'power2.inOut', // 부드러운 감속-가속曲선
-      //   onComplete: () => {
-      //     // 애니메이션이 끝난 뒤 텍스트 제거
-      //     centerText.textContent = '';
-      //     // 위치를 초기화해두면 다음 등장 시 깜빡임이 없음
-      //     gsap.set(centerText, { y: 0, scale: 0.95 });
-      //   },
-      // });
     });
   }
 
-  function updatePosition() {
-    const scrollAmount = window.scrollY * 0.0001;
-    document.querySelectorAll('.item').forEach(function (item, index) {
-      const angle = index * angleIncrement + scrollAmount;
-      const x = centerX + radius * Math.cos(angle);
-      const y = centerY + radius * Math.sin(angle);
-      const rotation = (angle * 180) / Math.PI;
+  //상자 뜨는거 ㄴ
+  // function updatePosition() {
+  //   const scrollAmount = window.scrollY * 0.0001;
+  //   document.querySelectorAll('.item').forEach(function (item, index) {
+  //     const angle = index * angleIncrement + scrollAmount;
+  //     const x = centerX + radius * Math.cos(angle);
+  //     const y = centerY + radius * Math.sin(angle);
+  //     const rotation = (angle * 180) / Math.PI;
 
-      gsap.to(item, {
-        duration: 0.05,
-        x: x + 'px',
-        y: y + 'px',
-        rotation: rotation,
-        ease: 'elastic.out(1,0.3)',
-      });
-    });
-  }
+  //     gsap.to(item, {
+  //       duration: 0.05,
+  //       x: x + 'px',
+  //       y: y + 'px',
+  //       rotation: rotation,
+  //       ease: 'elastic.out(1,0.3)',
+  //     });
+  //   });
+  // }
 
   updatePosition();
   document.addEventListener('scroll', updatePosition);
 
-  document.addEventListener('mousemove', function (e) {
-    gsap.to(cursor, {
-      x: e.clientX - 150,
-      y: e.clientY - 200,
-      duration: 1,
-      ease: 'power3.out',
-    });
-  });
+  //이미지 안넣을거면 필요x
+  // document.addEventListener('mousemove', function (e) {
+  //   gsap.to(cursor, {
+  //     x: e.clientX - 150,
+  //     y: e.clientY - 200,
+  //     duration: 1,
+  //     ease: 'power3.out',
+  //   });
+  // });
 });

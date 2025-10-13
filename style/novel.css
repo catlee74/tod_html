@@ -107,16 +107,25 @@ img {
 }
 
 .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  width: 50em;
+  height: 40rem;
+  padding: 30px;
+  margin-inline: auto;
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(0.9);
   color: #d2d2d2;
+  transform: translate(-50%, -50%);
   opacity: 0;
   pointer-events: none;
+  max-width: 80%;
+  text-align: center;
   z-index: 10;
-  max-width: 100%;
-  line-height: 1.5;
+  background-color: blue;
 }
 
 .sentence {
@@ -133,6 +142,7 @@ img {
   line-height: 1.65;
   color: #c8c8c8;
   opacity: 0;
+  background-color: red;
 }
 
 .highlight {

@@ -129,30 +129,31 @@ img {
 
 // 키워드 문장
 .text {
-  // display: flex;
-  // flex-direction: column; /* 위아래 배치 */
-  // align-items: flex-start; /* 중앙 정렬 */
-  // justify-content: center;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  width: 50em;
+  height: 40rem;
+  padding: 30px;
+  margin-inline: auto;
+  // position: absolute;
+  // top: 50%;
+  // left: 50%;
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(0.9);
   color: #d2d2d2;
-  // font-size: 2rem;
-  // font-weight: 600;
-  // text-align: center;
+  transform: translate(-50%, -50%);
+
   opacity: 0;
   pointer-events: none;
-  // transition: opacity 0.5s ease, transform 0.5s ease;
 
+  max-width: 80%;
+  // max-width: 100%;
+  text-align: center;
   z-index: 10;
-  max-width: 100%;
-  line-height: 1.5;
-  // padding: 1rem 1.25rem;
-  // background: rgba(27, 27, 27, 0.7);
-  // border-radius: 12px;
-  // backdrop-filter: blur(4px);
+  background-color: blue;
 }
 
 .sentence {
@@ -170,9 +171,10 @@ img {
   line-height: 1.65;
   color: #c8c8c8;
   opacity: 0;
-  // transform: translateY(10px);
-  // transition: opacity 0.8s ease, transform 0.8s ease;
+  //padding을 넣어도 처음 이후에는 원상태로 됨.........
+  background-color: red;
 }
+
 .highlight {
   color: red;
   font-weight: 800;
