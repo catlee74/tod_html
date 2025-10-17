@@ -168,23 +168,24 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   //상자 뜨는거 ㄴ
-  // function updatePosition() {
-  //   const scrollAmount = window.scrollY * 0.0001;
-  //   document.querySelectorAll('.item').forEach(function (item, index) {
-  //     const angle = index * angleIncrement + scrollAmount;
-  //     const x = centerX + radius * Math.cos(angle);
-  //     const y = centerY + radius * Math.sin(angle);
-  //     const rotation = (angle * 180) / Math.PI;
+  function updatePosition() {
+    const scrollAmount = window.scrollY * 0.0001;
+    document.querySelectorAll('.item').forEach(function (item, index) {
+      const angle = index * angleIncrement + scrollAmount;
+      const x = centerX + radius * Math.cos(angle);
+      const y = centerY + radius * Math.sin(angle);
+      const rotation = (angle * 180) / Math.PI;
 
-  //     gsap.to(item, {
-  //       duration: 0.05,
-  //       x: x + 'px',
-  //       y: y + 'px',
-  //       rotation: rotation,
-  //       ease: 'elastic.out(1,0.3)',
-  //     });
-  //   });
-  // }
+      gsap.to(item, {
+        duration: 0.05,
+        x: x + 'px',
+        y: y + 'px',
+        rotation: rotation,
+        ease: 'elastic.out(1,0.3)',
+      });
+    });
+  }
+  //돌아가는거 반대로 설정해보기
 
   updatePosition();
   document.addEventListener('scroll', updatePosition);
