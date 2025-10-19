@@ -9,8 +9,10 @@ document.addEventListener('DOMContentLoaded', function () {
   const descriptionBox = document.querySelector('.description');
 
   const numberOfItems = 50;
+  // const radius = 1200; //원 크기임
   const radius = 1300; //원 크기임
 
+  // const centerX = window.innerWidth / 1.8; //원의 중심 x좌표
   const centerX = window.innerWidth / 2; //원의 중심 x좌표
   const centerY = window.innerHeight / 2;
   const angleIncrement = (2 * Math.PI) / numberOfItems;
@@ -22,6 +24,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const count = document.createElement('span');
 
     p.textContent = interiors[i].name;
+    // count.textContent = `(${i + 1})`;
+    //숫자 순서대로
     count.textContent = `(${Math.floor(Math.random() * 50) + 1})`;
     item.appendChild(p);
     p.appendChild(count);
@@ -167,9 +171,12 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  //상자 뜨는거 ㄴ
   function updatePosition() {
-    const scrollAmount = window.scrollY * 0.0001;
+    const scrollAmount = -window.scrollY * 0.00016;
+    //음수로 해서 마우스 스크롤 방향을 바꾼거임. 문제가 있을시 수정할 것
+    // const scrollAmount = window.scrollY * 0.0001;
+    //마우스 스크롤 감도임.
+
     document.querySelectorAll('.item').forEach(function (item, index) {
       const angle = index * angleIncrement + scrollAmount;
       const x = centerX + radius * Math.cos(angle);
@@ -185,7 +192,6 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   }
-  //돌아가는거 반대로 설정해보기
 
   updatePosition();
   document.addEventListener('scroll', updatePosition);
