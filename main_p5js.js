@@ -40,6 +40,9 @@ function setup() {
 
   w = width / vidw;
   h = height / vidh; //세로 간격
+  //gpt
+  // h = (width / vidw) * (video.height / video.width);
+
   // h = 10; //세로 간격
 
   textAlign(CENTER, CENTER);
