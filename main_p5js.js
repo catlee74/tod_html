@@ -12,6 +12,7 @@ let video;
 
 //16:9비율
 let vidw = 128;
+// let vidw = 200;
 let vidh = 72;
 // let vidw = 160;
 // let vidh = 90;
@@ -27,14 +28,17 @@ let p5Renderer;
 function setup() {
   // // 교수님코드__네비 외에 화면크기 계산
   // //나중에 꼭 연구해볼 것!
-  // parentDom = document.querySelector('.canvas-container');
-  // const { width: parentWidth, height: parentHeight } =
-  //   parentDom.getBoundingClientRect();
-  // p5Renderer = createCanvas(parentWidth, parentHeight);
-  // p5Renderer.parent(parentDom);
+  parentDom = document.querySelector('.canvas-container');
+  const { width: parentWidth, height: parentHeight } =
+    parentDom.getBoundingClientRect();
 
-  createCanvas(windowWidth, windowHeight);
-  //-120
+  p5Renderer = createCanvas(windowWidth, parentHeight);
+  // p5Renderer = createCanvas(parentWidth, parentHeight);
+  //parentWidth가 스크롤바 너비만큼 빼고 계산한다. 그래서 약 20px정도 작게 가로로 만들어진 것.
+  p5Renderer.parent(parentDom);
+
+  // createCanvas(windowWidth, windowHeight - 120);
+
   video = createCapture(VIDEO, { flipped: true });
   video.size(vidw, vidh);
   video.hide();
@@ -48,6 +52,8 @@ function setup() {
 
   textAlign(CENTER, CENTER);
   fill(255);
+  // console.log('windowWidth:', windowWidth);
+  // console.log('parentWidth:', parentWidth);
 }
 
 function draw() {
