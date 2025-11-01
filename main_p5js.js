@@ -83,7 +83,8 @@ function draw() {
       //gpt
 
       let topCol = color('#1b1b1b');
-      let bottomCol = color('#d2d2d2');
+      let bottomCol = color('#ffffffff');
+      // let bottomCol = color('#d2d2d2');
       let amt = j / (video.height - 1); // 0(위) → 1(아래)
       let gradCol = lerpColor(topCol, bottomCol, amt);
       fill(gradCol);
