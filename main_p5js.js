@@ -33,7 +33,8 @@ function setup() {
   // p5Renderer = createCanvas(parentWidth, parentHeight);
   // p5Renderer.parent(parentDom);
 
-  createCanvas(windowWidth, windowHeight - 120);
+  createCanvas(windowWidth, windowHeight);
+  //-120
   video = createCapture(VIDEO, { flipped: true });
   video.size(vidw, vidh);
   video.hide();
