@@ -118,7 +118,7 @@ img {
   margin-inline: auto;
   position: fixed;
   top: 50%;
-  left: 60%;
+  left: 50%;
   color: #d2d2d2;
   transform: translate(-50%, -50%);
   opacity: 0;
@@ -140,7 +140,7 @@ img {
   text-align: left;
   font-size: 1.25rem;
   font-weight: 500;
-  line-height: 1.65;
+  line-height: 1.8;
   color: #c8c8c8;
   opacity: 0;
   padding: 0;
@@ -149,4 +149,8 @@ img {
 .highlight {
   color: red;
   font-weight: 800;
+}
+
+.descriptionHighlight {
+  font-weight: 700;
 }

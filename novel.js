@@ -24,9 +24,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const count = document.createElement('span');
 
     p.textContent = interiors[i].name;
-    // count.textContent = `(${i + 1})`;
     //숫자 순서대로
+    // count.textContent = `(${i + 1})`;
+
+    //숫자 랜덤으로
     count.textContent = `(${Math.floor(Math.random() * 50) + 1})`;
+
     item.appendChild(p);
     p.appendChild(count);
     gallery.appendChild(item);
