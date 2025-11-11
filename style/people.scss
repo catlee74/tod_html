@@ -81,7 +81,9 @@ a {
 }
 
 .container {
-  padding-inline: 6.25rem;
+  // padding-inline: 6.25rem;
+  padding-left: 6.25rem;
+  padding-right: 4.75rem;
   display: grid;
   gap: 2.5rem;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -93,4 +95,39 @@ a {
   // background-color: blue;
   margin-inline: auto;
   padding-bottom: 2.5rem;
+}
+
+// https://inpa.tistory.com/entry/CSS-%F0%9F%8C%9F-%EC%8A%A4%ED%81%AC%EB%A1%A4-%EB%B0%94Scrollbar-%EA%BE%B8%EB%AF%B8%EA%B8%B0-%EC%86%8D%EC%84%B1-%EC%B4%9D%EC%A0%95%EB%A6%AC#webkit_%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80_%EC%8A%A4%ED%81%AC%EB%A1%A4%EB%B0%94_%EC%86%8D%EC%84%B1
+//위 사이트를 참고함
+.scroll_container {
+  position: relative;
+  height: 100vh;
+  // overflow-y: scroll;
+  overflow-y: overlay;
+  // background-color: #1b1b1b;
+}
+.scroll_container::-webkit-scrollbar {
+  display: inline-block;
+  width: 1.5rem;
+}
+
+.scroll_container::-webkit-scrollbar-thumb {
+  outline: none;
+  background: #606060;
+  border-radius: 20px;
+  border: 8px solid #1b1b1b;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #808080;
+}
+
+.scroll_container::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.scroll_container::-webkit-scrollbar-button:vertical:start:decrement,
+.scroll_container::-webkit-scrollbar-button:vertical:start:increment {
+  display: block;
+  height: 60px;
 }

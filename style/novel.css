@@ -144,6 +144,7 @@ img {
   color: #c8c8c8;
   opacity: 0;
   padding: 0;
+  letter-spacing: 0.01em;
 }
 
 .highlight {

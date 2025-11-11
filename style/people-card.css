@@ -25,12 +25,12 @@
   padding-top: 0.9375rem;
 }
 .card__text {
-  font-size: 1.5rem;
   font-size: 1.25rem;
   font-weight: 700;
   align-self: center;
   justify-self: center;
   text-align: center;
+  letter-spacing: 0.06em;
 }
 .card__number {
   font-size: 1rem;
