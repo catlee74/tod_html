@@ -100,6 +100,13 @@ document.addEventListener('DOMContentLoaded', function () {
           }
         );
       }
+
+      const p = item.querySelector('p');
+      gsap.to(p, {
+        color: '#ff0000',
+        duration: 0.3,
+        ease: 'power2.out',
+      });
     });
 
     item.addEventListener('mouseout', function () {
@@ -171,33 +178,41 @@ document.addEventListener('DOMContentLoaded', function () {
           });
         },
       });
+      const p = item.querySelector('p');
+      gsap.to(p, {
+        color: '#d2d2d2', // 원래 색상
+        duration: 0.3,
+        ease: 'power2.out',
+      });
     });
   }
 
-  function updatePosition() {
-    const scrollAmount = -window.scrollY * 0.00016;
-    //음수로 해서 마우스 스크롤 방향을 바꾼거임. 문제가 있을시 수정할 것
-    // const scrollAmount = window.scrollY * 0.0001;
-    //마우스 스크롤 감도임.
+  let rotationOffset = 0;
+  document.addEventListener('wheel', function (e) {
+    // +=는 위로 -=는 아래로 감
+    rotationOffset -= e.deltaY * 0.0003; // 속도
+    updatePosition();
+  });
 
-    document.querySelectorAll('.item').forEach(function (item, index) {
-      const angle = index * angleIncrement + scrollAmount;
+  function updatePosition() {
+    document.querySelectorAll('.item').forEach((item, index) => {
+      const angle = index * angleIncrement + rotationOffset;
       const x = centerX + radius * Math.cos(angle);
       const y = centerY + radius * Math.sin(angle);
       const rotation = (angle * 180) / Math.PI;
 
       gsap.to(item, {
-        duration: 0.05,
-        x: x + 'px',
-        y: y + 'px',
-        rotation: rotation,
-        ease: 'elastic.out(1,0.3)',
+        duration: 0.6,
+        x,
+        y,
+        rotation,
+        ease: 'power2.out',
       });
     });
   }
 
-  updatePosition();
-  document.addEventListener('scroll', updatePosition);
+  // updatePosition();
+  // document.addEventListener('scroll', updatePosition);
 
   //이미지 안넣을거면 필요x
   // document.addEventListener('mousemove', function (e) {
