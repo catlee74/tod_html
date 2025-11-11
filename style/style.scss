@@ -21,7 +21,7 @@ body {
   height: 3.25rem;
   border: 2px solid var(--color-texta);
   border-radius: 50%;
-  position: absolute;
+  position: fixed;
   z-index: 100;
   transform: translate(-50%, -50%);
   pointer-events: none;
