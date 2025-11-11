@@ -3,6 +3,25 @@ body {
   background-color: #1b1b1b;
 }
 
+.mouse_cursor {
+  width: 3.25rem;
+  height: 3.25rem;
+  border: 2px solid var(--color-texta);
+  border-radius: 50%;
+  position: absolute;
+  z-index: 100;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transform-origin: 100% 100%;
+  -webkit-backdrop-filter: sepia(20%);
+          backdrop-filter: sepia(20%);
+  background-size: cover;
+  border: 1px solid #606060;
+  box-shadow: 0rem 0rem 1rem rgba(255, 255, 255, 0.3);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+
 a {
   text-decoration: none;
 }

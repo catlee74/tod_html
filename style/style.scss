@@ -13,6 +13,26 @@ body {
   // display: grid;
   // place-items: center;
 }
+
+//커서 참고 url
+// https://velog.io/@bangina/%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4-%EA%BF%80%ED%8C%81-%EB%A7%88%EC%9A%B0%EC%8A%A4%EC%BB%A4%EC%84%9C-%EC%95%A0%EB%8B%88%EB%A9%94%EC%9D%B4%EC%85%98-%EB%A7%8C%EB%93%A4%EA%B8%B0%EC%89%AC%EC%9B%80
+.mouse_cursor {
+  width: 3.25rem;
+  height: 3.25rem;
+  border: 2px solid var(--color-texta);
+  border-radius: 50%;
+  position: absolute;
+  z-index: 100;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transform-origin: 100% 100%;
+  backdrop-filter: sepia(20%);
+  background-size: cover;
+  border: 1px solid #606060;
+  box-shadow: 0rem 0rem 1rem rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+}
+
 a {
   text-decoration: none;
 }
@@ -61,6 +81,7 @@ img {
     transition: 0.3s ease;
     // transition: 300ms ease-out;
     // border-bottom: 3px solid transparent;
+    // z-index: 100;
   }
   &__right a {
     padding: 0.75rem;
