@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', function () {
   // const radius = 1200; //원 크기임
   const radius = 1300; //원 크기임
 
-  // const centerX = window.innerWidth / 1.8; //원의 중심 x좌표
-  const centerX = window.innerWidth / 2; //원의 중심 x좌표
+  const centerX = window.innerWidth / 1.8; //원의 중심 x좌표
+  // const centerX = window.innerWidth / 2; //원의 중심 x좌표
   const centerY = window.innerHeight / 2;
   const angleIncrement = (2 * Math.PI) / numberOfItems;
 

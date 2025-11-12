@@ -17,11 +17,14 @@ let mouseY = 0;
 // 커서좌표
 let cursorX = 0;
 let cursorY = 0;
-
 window.addEventListener('mousemove', (e) => {
-  mouseX = e.pageX;
-  mouseY = e.pageY;
+  mouseX = e.clientX;
+  mouseY = e.clientY;
 });
+// window.addEventListener('mousemove', (e) => {
+//   mouseX = e.pageX;
+//   mouseY = e.pageY;
+// });
 
 function animateCursor() {
   cursorX += (mouseX - cursorX) * 0.15;
