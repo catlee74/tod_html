@@ -97,7 +97,7 @@ export const interiors = [
   },
   {
     id: 13,
-    name: '초상화 속 인물',
+    name: '초상화',
     sentence:
       '나는 아름다움이 사라지지 않는 모든 것을 질투해요.<br>당신이 그린 내 <span class="highlight">초상화</span>에도 질투심을 느껴요. 내가<br>잃어버리는 것을 어떻게 <span class="highlight">초상화</span>는 계속 가질 수 있는거죠?',
     description:
